@@ -9,7 +9,10 @@ function App() {
 
   function fetchBots(){
     fetch(BOTS_URL).then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => {
+      console.log(data);
+      setBots(() => data);
+    });
   }
 
   useEffect(() => {
@@ -21,7 +24,7 @@ function App() {
       <h1 className="text-center text-green-500 font-bold text-3xl">
         Hello world!
       </h1>
-      <BotCollection />
+      <BotCollection bots={bots}/>
     </div>
   );
 }
