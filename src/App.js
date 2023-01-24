@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import BotCollection from './components/BotCollection';
 
-const BOTS_URL = "http://localhost:8001/bots"
+const BOTS_URL = "https://json-server-vercel-2-ten.vercel.app/bots"
 
 function App() {
   const [bots, setBots] = useState([]);
