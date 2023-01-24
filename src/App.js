@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import BotCollection from './components/BotCollection';
+import YourBotArmy from './components/YourBotArmy';
 
 const BOTS_URL = "https://json-server-vercel-2-ten.vercel.app/bots"
 
@@ -21,9 +22,7 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-center text-green-500 font-bold text-3xl">
-        Hello world!
-      </h1>
+      <YourBotArmy />
       <BotCollection bots={bots}/>
     </div>
   );
