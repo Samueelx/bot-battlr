@@ -1,11 +1,11 @@
 import React from "react";
 
-function Bot({avatar, name, botClass, catchphrase, health, damage, armor}) {
+function Bot({id, avatar, name, botClass, catchphrase, health, damage, armor, onAdd}) {
     return (
         <>
-            <div className="rounded-lg shadow-lg bg-white max-w-sm flex-1">
+            <div className="rounded-lg shadow-lg bg-white max-w-xs flex-1" onClick={() => {onAdd(id, botClass)}}>
                 <img className="rounded-t-lg" src={avatar} alt="avatar"/>
-                <div className="p-6">
+                <div className="p-3">
                     <h5 className="text-gray-900 text-xl font-medium mb-2 mx-2 inline-block">{name}</h5>
                     <p className="inline-block mx-2">{botClass}</p>
                     <p className="text-gray-700 text-base mb-4">

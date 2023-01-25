@@ -7,6 +7,8 @@ const BOTS_URL = "https://json-server-vercel-2-ten.vercel.app/bots"
 
 function App() {
   const [bots, setBots] = useState([]);
+  const [army, setArmy] = useState([]);
+  const [armyClass, setClass] = useState([]);
 
   function fetchBots(){
     fetch(BOTS_URL).then(res => res.json())
@@ -16,14 +18,32 @@ function App() {
     });
   }
 
+  function addToArmy(id, botClass) {
+    if(army.length >= 3) 
+      alert("You've reached maximum number of bots");
+    else{
+      bots.forEach((bot) => {
+        if(bot.id === id){
+          setArmy([...army, bot]);
+          setClass([...armyClass, botClass]);
+        }
+      });
+
+      const updatedBots = bots.filter((bot) => bot.id !== id);
+      setBots(() => updatedBots);
+
+      console.log(`Updated bots: ${updatedBots}, Army: ${army}`);
+    }
+  }
+
   useEffect(() => {
     fetchBots();
   }, []);
 
   return (
     <div>
-      <YourBotArmy />
-      <BotCollection bots={bots}/>
+      <YourBotArmy army={army}/>
+      <BotCollection bots={bots} onAdd={addToArmy}/>
     </div>
   );
 }
