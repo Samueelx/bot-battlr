@@ -19,7 +19,7 @@ function App() {
   }
 
   function addToArmy(id, botClass) {
-    if(army.length >= 3) 
+    if(army.length >= 4) 
       alert("You've reached maximum number of bots");
     else{
       bots.forEach((bot) => {
