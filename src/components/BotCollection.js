@@ -11,7 +11,7 @@ function BotCollection({bots, onAdd}) {
 
     return (
         <>
-        <div className="flex flex-wrap justify-around gap-4 content-around">
+        <div className="flex flex-wrap justify-around gap-x-4 gap-y-4 content-around">
             {cards}
         </div>
         </>

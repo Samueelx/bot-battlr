@@ -8,7 +8,7 @@ function Bot({id, avatar, name, botClass, catchphrase, health, damage, armor, on
                 <div className="p-3">
                     <h5 className="text-gray-900 text-xl font-medium mb-2 mx-2 inline-block">{name}</h5>
                     <p className="inline-block mx-2">{botClass}</p>
-                    <p className="text-gray-700 text-base mb-4">
+                    <p className="text-gray-700 mb-4 text-sm text-clip overflow-hidden">
                         {catchphrase}
                     </p>
 
