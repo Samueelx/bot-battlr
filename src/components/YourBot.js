@@ -1,9 +1,9 @@
 import React from "react";
 
-function YourBot({avatar, name, botClass, catchphrase, health, damage, armor}) {
+function YourBot({id, avatar, name, botClass, catchphrase, health, damage, armor, onRemove}) {
     return (
         <>
-        <div className="rounded-lg shadow-lg bg-white max-w-xs flex-1">
+        <div className="rounded-lg shadow-lg bg-white max-w-xs flex-1" onClick={() => {onRemove(id, botClass)}}>
                 <img className="rounded-t-lg" src={avatar} alt="avatar"/>
                 <div className="p-3">
                     <h5 className="text-gray-900 text-xl font-medium mb-2 mx-2 inline-block">{name}</h5>
@@ -13,9 +13,9 @@ function YourBot({avatar, name, botClass, catchphrase, health, damage, armor}) {
                     </p>
 
                     <hr className="mb-3.5"/>
-                    <p className="inline-block p-1 m-1 font-thin">Health: {health}</p>
-                    <p className="inline-block p-1 m-1 font-thin">Damage: {damage}</p>
-                    <p className="inline-block p-1 m-1 font-thin">Armor: {armor}</p>
+                    <p className="inline-block p-1 m-1 font-thin">💔: {health}</p>
+                    <p className="inline-block p-1 m-1 font-thin">⚡: {damage}</p>
+                    <p className="inline-block p-1 m-1 font-thin">🛡️: {armor}</p>
                 </div>
             </div>
         </>

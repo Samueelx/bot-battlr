@@ -13,9 +13,9 @@ function Bot({id, avatar, name, botClass, catchphrase, health, damage, armor, on
                     </p>
 
                     <hr className="mb-3.5"/>
-                    <p className="inline-block p-1 m-1 font-thin">Health: {health}</p>
-                    <p className="inline-block p-1 m-1 font-thin">Damage: {damage}</p>
-                    <p className="inline-block p-1 m-1 font-thin">Armor: {armor}</p>
+                    <p className="inline-block p-1 m-1 font-thin">💔: {health}</p>
+                    <p className="inline-block p-1 m-1 font-thin">⚡: {damage}</p>
+                    <p className="inline-block p-1 m-1 font-thin">🛡️: {armor}</p>
                 </div>
             </div>
         </>

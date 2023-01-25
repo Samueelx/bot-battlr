@@ -29,11 +29,18 @@ function App() {
         }
       });
 
-      const updatedBots = bots.filter((bot) => bot.id !== id);
-      setBots(() => updatedBots);
+      // const updatedBots = bots.filter((bot) => bot.id !== id);
+      // setBots(() => updatedBots);
 
-      console.log(`Updated bots: ${updatedBots}, Army: ${army}`);
+      console.log(`Army: ${army}`);
     }
+  }
+
+  function removeFromArmy(id, botClass) {
+    const updatedBotClasses = armyClass.filter((bCl) => bCl !== botClass);
+    setClass(updatedBotClasses);
+    const updatedArmy = army.filter((bot) => bot.id !== id);
+    setArmy(updatedArmy); 
   }
 
   useEffect(() => {
@@ -42,7 +49,7 @@ function App() {
 
   return (
     <div>
-      <YourBotArmy army={army}/>
+      <YourBotArmy army={army} onRemove={removeFromArmy}/>
       <BotCollection bots={bots} onAdd={addToArmy}/>
     </div>
   );
