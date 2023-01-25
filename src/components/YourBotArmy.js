@@ -9,7 +9,7 @@ function YourBotArmy({army, onRemove}) {
     });
     return (
         <div className="bg-gradient-to-r from-cyan-600 to-green-400 h-max">
-            <div className="flex flex-wrap justify-start gap-x-4 gap-y-4 content-around my-1">
+            <div className="flex flex-wrap justify-between gap-x-4 gap-y-4 content-around my-1">
                 {soldier}
             </div>
         </div>
